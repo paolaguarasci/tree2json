@@ -1,0 +1,34 @@
+{
+  "name": "dir2json",
+  "version": "1.0.0",
+  "description": "save directory structure to json file and viceversa",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "dir",
+    "to",
+    "json",
+    "directory",
+    "structure"
+  ],
+  "author": "Paola Guarasci",
+  "license": "MIT",
+  "devDependencies": {
+    "@webpack-cli/init": "^0.1.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.2",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^1.0.0",
+    "fs": "0.0.1-security",
+    "node-sass": "^4.9.3",
+    "path": "^0.12.7",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.0",
+    "uglifyjs-webpack-plugin": "^1.3.0",
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0"
+  }
+}
