@@ -4,8 +4,6 @@ let nDir = 0;
 let nFile = 0;
 const result = [];
 
-
-
 function read(p) {
     let info = {
         "type": "",
@@ -53,20 +51,57 @@ function callWithFile(result, file) {
     });
     result = report(result);
     save(result);
-    // console.log(result);
 }
 
+if (process.argv.length != 4) {
+    console.log(`
+    Use for read directory structure
+        $ node app.js -r [directory]
 
-const input = path.resolve(process.argv[2]);
+    Use for write directory structure
+        $ node app.js -w [.json struct file]
+    `);
+    return;
+}
 
-if (fs.statSync(input).isDirectory()) {
-    result.push(read(input));
-    report(result);
-    save(result);
+const opt = process.argv[2];
+const input = path.resolve(process.argv[3]);
+if (opt === '-r') {
+    if (fs.statSync(input).isDirectory()) {
+        result.push(read(input));
+        report(result);
+        save(result);
+    } else {
+        callWithFile(result, input);
+        return -1;
+    }
+} else if (opt === '-w') {
+    const file = [...JSON.parse(fs.readFileSync(input, "utf-8"))];
+    // console.log(file[0]);
+    write(file[0], './');
+    console.log(`
+        Write ${nDir} directory and skipped ${nFile} files
+    `);
 } else {
-    callWithFile(result, input);
-    return -1;
+    console.log("Wrong input");
 }
 
-
-
+function write(json, parent) {
+    if (json.type === 'directory') {
+        try {
+            fs.mkdirSync(path.resolve(parent) + '/' + json.name);
+        } catch {
+            const pathRelative = path.relative(path.resolve("./"), (path.resolve(parent) + '/' + json.name));
+            console.error(pathRelative + " alredy exist!");
+        }
+        if (json.contents.length != undefined) {
+            json.contents.forEach(e => {
+                write(e, path.resolve(parent) + '/' + json.name);
+            });
+        }
+        nDir++;
+    } else {
+        nFile++;
+    }
+    return;
+}
