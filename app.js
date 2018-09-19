@@ -77,7 +77,7 @@ function tree() {
     // input = path.resolve(__dirname, input);
 
     this.saveToFile = function (input) {
-        const dir = path.resolve(__dirname, input);
+        const dir = path.resolve(input);
         if (fs.statSync(dir).isDirectory()) {
             result.push(read(dir));
             report(result);
