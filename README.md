@@ -1,4 +1,7 @@
 # Another tree clone
+
+[![npm version](https://badge.fury.io/js/tree2json.svg)](https://badge.fury.io/js/tree2json)
+
 ## Installation
 ```
 $ npm --save tree2json

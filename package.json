@@ -1,6 +1,6 @@
 {
   "name": "tree2json",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "save directory structure to json file and viceversa",
   "main": "app.js",
   "scripts": {
@@ -16,8 +16,17 @@
   ],
   "author": "Paola Guarasci",
   "license": "MIT",
-  "devDependencies": {
+  "devDependencies": {},
+  "dependencies": {
     "fs": "0.0.1-security",
     "path": "^0.12.7"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paolaguarasci/tree2json.git"
+  },
+  "bugs": {
+    "url": "https://github.com/paolaguarasci/tree2json/issues"
+  },
+  "homepage": "https://github.com/paolaguarasci/tree2json#readme"
 }
