@@ -1,4 +1,4 @@
-#Another tree clone
+# Another tree clone
 ## Installation
 ```
 $ npm --save tree2json
