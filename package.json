@@ -1,6 +1,6 @@
 {
   "name": "tree2json",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "save directory structure to json file and viceversa",
   "main": "app.js",
   "scripts": {

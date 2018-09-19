@@ -4,7 +4,7 @@
 
 ## Installation
 ```
-$ npm --save tree2json
+$ npm install --save tree2json
 ```
 
 ## Usage (Node.js)
